@@ -118,8 +118,9 @@ ${img ? `<meta name="twitter:image" content="${esc(img)}">` : ""}
     box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center;
   }
   .wordmark {
-    font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em;
-    color: var(--brand-green); margin: 0 0 1.2rem;
+    font-family: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 1.3rem; font-weight: 800; letter-spacing: -0.01em;
+    color: var(--brand-green); margin: 0 0 0.25rem;
   }
   .hero {
     width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px;
@@ -130,9 +131,9 @@ ${img ? `<meta name="twitter:image" content="${esc(img)}">` : ""}
   .rating { color: var(--brand-coral); font-weight: 600; margin: 0 0 1.5rem; }
   .cta {
     display: block; background: var(--brand-green); color: #fff; text-decoration: none;
-    padding: 0.95rem; border-radius: 16px; font-weight: 700;
+    padding: 1rem; border-radius: 16px; font-weight: 700; font-size: 1.1rem;
   }
-  .tagline { margin-top: 1.1rem; color: #999; font-size: 0.85rem; }
+  .tagline { margin: 0 0 1.3rem; color: #999; font-size: 0.85rem; }
   @media (prefers-color-scheme: dark) {
     body { background: #1a1a1a; color: #e5e5e5; }
     .card { background: #2c2c2e; box-shadow: none; }
@@ -144,12 +145,12 @@ ${img ? `<meta name="twitter:image" content="${esc(img)}">` : ""}
 <body>
   <main class="card">
     <p class="wordmark">Scanpik</p>
+    <p class="tagline">掃條碼、看評論、分享心得</p>
     ${img ? `<img class="hero" src="${esc(img)}" alt="${esc(p.name)}">` : ""}
     <h1>${esc(p.name)}</h1>
     ${p.brand_name ? `<p class="brand">${esc(p.brand_name)}</p>` : ""}
     <p class="rating">${esc(ratingText)}</p>
     <a class="cta" href="${esc(CTA.href)}">${esc(CTA.label)}</a>
-    <p class="tagline">掃條碼、看評論、分享心得</p>
   </main>
 </body>
 </html>`;
