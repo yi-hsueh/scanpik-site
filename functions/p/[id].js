@@ -13,11 +13,13 @@ const SUPABASE_ANON_KEY =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxtcHF4anB2ZHBldWh3YXJjeXliIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3MjkyNzMsImV4cCI6MjA5MzMwNTI3M30.R1t56Me34EGBn153IANqgjRq6RP_wGCeQuU6z_HlIfI";
 
 // Call-to-action on the share page. Pre-launch it points at Threads to gather
-// followers; at public beta / launch, swap both fields to the TestFlight or
-// App Store link — this object is the ONLY place to change.
+// followers; at public beta / launch, swap these fields to the TestFlight or
+// App Store link — this object is the ONLY place to change. `sub` is the caption
+// under the button; swap "TestFlight" for "App Store" at launch too.
 const CTA = {
   href: "https://testflight.apple.com/join/YtqSnfcX",
   label: "加入 Scanpik 公開測試",
+  sub: "iOS App（透過 TestFlight 安裝）",
 };
 
 const UUID_RE =
@@ -133,6 +135,11 @@ ${img ? `<meta name="twitter:image" content="${esc(img)}">` : ""}
     display: block; background: var(--brand-green); color: #fff; text-decoration: none;
     padding: 1rem; border-radius: 16px; font-weight: 700; font-size: 1.1rem;
   }
+  .open-app {
+    display: block; color: var(--brand-green); text-decoration: none;
+    font-weight: 600; font-size: 0.95rem; margin: 0 0 0.9rem;
+  }
+  .cta-sub { margin: 0.7rem 0 0; color: #999; font-size: 0.8rem; }
   .tagline { margin: 0 0 1.3rem; color: #999; font-size: 0.85rem; }
   @media (prefers-color-scheme: dark) {
     body { background: #1a1a1a; color: #e5e5e5; }
@@ -150,7 +157,9 @@ ${img ? `<meta name="twitter:image" content="${esc(img)}">` : ""}
     <h1>${esc(p.name)}</h1>
     ${p.brand_name ? `<p class="brand">${esc(p.brand_name)}</p>` : ""}
     <p class="rating">${esc(ratingText)}</p>
+    <a class="open-app" href="scanpik://p/${esc(p.id)}">已安裝 App？在 App 中開啟</a>
     <a class="cta" href="${esc(CTA.href)}">${esc(CTA.label)}</a>
+    <p class="cta-sub">${esc(CTA.sub)}</p>
   </main>
 </body>
 </html>`;
