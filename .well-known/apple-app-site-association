@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["ZMR25P7734.com.scanpik.Scanpik"],
+        "components": [
+          {
+            "/": "/p/*",
+            "comment": "Product share links open the app"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+# Universal Links: Apple requires the AASA file served as application/json,
+# over HTTPS, with no redirects. Cloudflare Pages serves it as a static asset;
+# this pins the content type (it has no file extension).
+/.well-known/apple-app-site-association
+  Content-Type: application/json
