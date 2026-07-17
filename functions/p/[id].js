@@ -77,7 +77,7 @@ function esc(s) {
 
 function renderPage(p) {
   const img = imageUrl(p.image_url);
-  const url = `https://scanpik.com/p/${p.id}`;
+  const url = `https://share.scanpik.com/p/${p.id}`;
   const ratingText =
     Number(p.review_count) > 0
       ? `★ ${p.avg_rating}・${p.review_count} 則評論`
