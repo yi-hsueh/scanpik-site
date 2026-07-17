@@ -103,28 +103,36 @@ ${img ? `<meta property="og:image" content="${esc(img)}">` : ""}
 <meta name="twitter:description" content="${esc(description)}">
 ${img ? `<meta name="twitter:image" content="${esc(img)}">` : ""}
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    color-scheme: light dark;
+    --brand-green: #00DF7E;
+    --brand-coral: #FF9275;
+  }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang TC", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Rounded", "SF Pro Text", "PingFang TC", sans-serif;
     margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
     background: #f2f2f7; color: #1a1a1a; padding: 1.5rem;
   }
   .card {
-    background: #fff; border-radius: 20px; padding: 1.5rem; max-width: 380px; width: 100%;
+    background: #fff; border-radius: 24px; padding: 1.5rem; max-width: 380px; width: 100%;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08); text-align: center;
   }
+  .wordmark {
+    font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em;
+    color: var(--brand-green); margin: 0 0 1.2rem;
+  }
   .hero {
-    width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 14px;
+    width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 16px;
     background: #f2f2f7; margin-bottom: 1.2rem;
   }
   h1 { font-size: 1.4rem; margin: 0 0 0.3rem; line-height: 1.3; }
   .brand { color: #777; margin: 0 0 0.8rem; }
-  .rating { color: #ff7a5c; font-weight: 600; margin: 0 0 1.5rem; }
+  .rating { color: var(--brand-coral); font-weight: 600; margin: 0 0 1.5rem; }
   .cta {
-    display: block; background: #2e8b57; color: #fff; text-decoration: none;
-    padding: 0.9rem; border-radius: 12px; font-weight: 600;
+    display: block; background: var(--brand-green); color: #fff; text-decoration: none;
+    padding: 0.95rem; border-radius: 16px; font-weight: 700;
   }
-  .brandmark { margin-top: 1.2rem; color: #999; font-size: 0.85rem; }
+  .tagline { margin-top: 1.1rem; color: #999; font-size: 0.85rem; }
   @media (prefers-color-scheme: dark) {
     body { background: #1a1a1a; color: #e5e5e5; }
     .card { background: #2c2c2e; box-shadow: none; }
@@ -135,12 +143,13 @@ ${img ? `<meta name="twitter:image" content="${esc(img)}">` : ""}
 </head>
 <body>
   <main class="card">
+    <p class="wordmark">Scanpik</p>
     ${img ? `<img class="hero" src="${esc(img)}" alt="${esc(p.name)}">` : ""}
     <h1>${esc(p.name)}</h1>
     ${p.brand_name ? `<p class="brand">${esc(p.brand_name)}</p>` : ""}
     <p class="rating">${esc(ratingText)}</p>
     <a class="cta" href="${esc(CTA.href)}">${esc(CTA.label)}</a>
-    <p class="brandmark">Scanpik・掃碼看評價</p>
+    <p class="tagline">掃條碼、看評論、分享心得</p>
   </main>
 </body>
 </html>`;
@@ -159,7 +168,7 @@ function notFound() {
     max-width: 420px; margin: 6rem auto; padding: 0 1.5rem; text-align: center;
     color: #1a1a1a; background: #f2f2f7;
   }
-  a { color: #2e8b57; }
+  a { color: #00DF7E; }
   @media (prefers-color-scheme: dark) { body { background: #1a1a1a; color: #e5e5e5; } }
 </style>
 </head>
